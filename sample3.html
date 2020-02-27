@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>counter</title>
+    </head>
+    <script>
+
+$(document).ready(function(){
+    $("#submit").click(function(){
+        
+            $.ajax({
+                type: "POST",
+                url: "counter.php",
+                data: datastring,
+                cache: false,
+                success: function(result){
+                    $("#display").html(result);
+                    
+                }
+            });
+        
+        return false;
+    });
+    });  
+  
+    </script>
+    <body>
+        <button type="submit" class="btn btn-primary col-md-6" id = "submit"    name="submit">like</button>
+        <div id="display"><p></p></div>
+
+    </body>
+</html>
